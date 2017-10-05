@@ -1,0 +1,59 @@
+---
+layout: default
+---
+<main class="container left-container">
+    <div class="row">
+
+        {% include nav.html %}
+
+        <section class="sidebar col-md-6 col-sm-12" >
+
+            <span class="menu-trigger animated fadeInDown">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </span>
+
+            {% include nav-no-js.html %}
+
+            <div class="sub-nav">
+                <a href="/blog"> Latest Posts</a>
+            </div>
+
+            <div class="animated fadeIn">
+                {% for post in site.posts %}
+                    {% if forloop.index <= page.post_count %}
+                    <article class="post">
+                        <div class="post-preview col-xs-10 no-gutter">
+                            <h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+
+                            <p class="meta">
+                                <a href="{{ post.author_url | prepend: site.baseurl }}">{{ post.author_name | capitalize}}</a> in <a href='{{ "/category/" | append: post.categories.first | prepend: site.baseurl }}'>{{ post.categories.first | capitalize}}</a>
+                            </p>
+                        </div>
+                    </article>
+                    {% endif %}
+                {% endfor %}
+
+            </div><!-- Home page posts -->
+
+        </section><!-- end sidebar -->
+
+        <section class="col-md-6 col-sm-12 col-md-offset-6 alt-main">
+
+          <div class="author-bio">
+            
+                <img src='{{ "/img/" | append : page.avatar | prepend: site.baseurl }}.jpg'>
+            
+                <div class="author-bio__info">
+                    {{ content }}
+                </div>
+            </div>
+            <!--<div class="sub-nav project-section">
+                <a href="/resume">Projects</a>
+            </div>-->
+            {% include mini-footer.html %}
+
+        </section><!-- main content -->
+    </div> <!--/row -->
+</main> <!-- /container -->
