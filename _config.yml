@@ -2,8 +2,8 @@
 title: Oluwaseun Omoyajowo
 email: omoyajowo2015@gmail.com
 description: Full Stack Developer
-baseurl: "/flickz" # the subpath of your site, e.g. /blog
-url: "https://flickz.github.io" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://flickz.me" # the base hostname & protocol for your site
 enable_retina: false
 nav_list:
   Home : ['Home', '/']
