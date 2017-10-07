@@ -1,6 +1,5 @@
 ---
 layout: home
-title: Oluwaseun Omoyajowo
 bodyclass: alt-home
 post_count: 8
 avatar: seun
